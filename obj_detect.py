@@ -157,6 +157,8 @@ class HeadHunter(FasterRCNN):
 def restore_network(net, pretrained_path):
     print('Loading resume network...')
     state_dict = torch.load(pretrained_path)
+    if 'model_state_dict' in state_dict:
+        state_dict = state_dict['model_state_dict']
     # create new OrderedDict that does not contain `module.`
     from collections import OrderedDict
     new_state_dict = OrderedDict()
@@ -169,4 +171,3 @@ def restore_network(net, pretrained_path):
         new_state_dict[name] = v
     net.load_state_dict(new_state_dict)
     return net
-
