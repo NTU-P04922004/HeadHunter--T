@@ -3,7 +3,7 @@
 DET:
     backbone: 'resnet50'
     det_cfg:
-        trained_model: '/content/NFL_R50_epoch_8.pth'
+        trained_model: '/kaggle/input/headhunter-weights/NFL_R50_epoch_16.pth'
         pretrain_path: ''
         confidence_threshold: 0.1
         nms_threshold: 0.5
