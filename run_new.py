@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import sys
-sys.path.insert(0, "/kaggle/workspace/HeadHunter")
+sys.path.insert(0, "/kaggle/working/HeadHunter")
 
 import numpy as np; import csv; from glob import glob; import os; import sys; 
 from shutil import move; from tqdm import tqdm; import os.path as osp  

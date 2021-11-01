@@ -9,7 +9,7 @@ from collections import defaultdict, OrderedDict
 from os import path as osp
 
 import sys
-sys.path.append("/kaggle/workspace/py-motmetrics")
+sys.path.append("/kaggle/working/py-motmetrics")
 
 import numpy as np
 import torch

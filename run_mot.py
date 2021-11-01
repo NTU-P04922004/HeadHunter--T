@@ -10,7 +10,7 @@ import os.path as osp
 from glob import glob
 
 import sys
-sys.path.append("/kaggle/workspace/HeadHunter")
+sys.path.append("/kaggle/working/HeadHunter")
 
 import numpy as np
 import yaml
