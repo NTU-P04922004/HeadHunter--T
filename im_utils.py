@@ -9,7 +9,7 @@ from collections import Counter
 # from scipy.misc import imread, imsave
 # from skimage.io import imread as skimread
 from skimage.transform import resize
-from skimage.measure import compare_ssim, compare_psnr
+# from skimage.measure import compare_ssim, compare_psnr
 import base64
 import pycocotools.mask as cocomask
 import os.path as osp
