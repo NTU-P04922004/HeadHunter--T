@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
+
+import sys
+sys.path.insert(0, "/content/HeadHunter")
+
 import numpy as np; import csv; from glob import glob; import os; import sys; 
 from shutil import move; from tqdm import tqdm; import os.path as osp  
 import matplotlib.pyplot as plt; from PIL import Image 
 import cv2 
-from scipy.misc import imread, imsave 
-from skimage.io import imread as skimread 
+# from scipy.misc import imread, imsave 
+# from skimage.io import imread as skimread 
 import random 
 import itertools 
 import h5py
@@ -22,7 +26,8 @@ np.random.seed(seed=12345)
 import configparser
 
 # Tracker specific
-from config.retina_cfg import cfg_re150 as retina_cfg
+# from config.retina_cfg import cfg_re150 as retina_cfg
+from head_detection.data import cfg_mnet, cfg_res50_4fpn, cfg_res152
 from config.det_cfg import det_cfg
 from obj_detect import objDetect
 from flow_tracker import Tracker

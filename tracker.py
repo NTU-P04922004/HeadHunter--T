@@ -14,7 +14,7 @@ from munkres import Munkres, print_matrix, make_cost_matrix
 
 from track import Track
 from im_utils import *
-from scipy.misc import imread, imsave
+# from scipy.misc import imread, imsave
 from scipy.spatial.distance import cdist
 from copy import deepcopy
 from operator import itemgetter
@@ -253,11 +253,13 @@ class Tracker:
         
         all_scores, all_pos, mean_scores, mean_pos = self.regress_particles(t_active_particles,
                                                                             t_n_particles)
+        # print(all_scores, all_pos)
         f_all_scores, f_all_pos, f_best_scores, f_best_pos, match_ids = self.filter_regressed_tracks(all_scores,
                                                                                                      all_pos,
                                                                                                      mean_scores,
                                                                                                      mean_pos)
         # PERFORM NMS
+        # print(f_best_scores, f_best_pos)
         keep_tracks = nms(f_best_pos, f_best_scores, self.regression_nms_thresh).detach().cpu().numpy()
         nms_ids = match_ids[keep_tracks] # np.ndarray
         nms_pos = f_best_pos[keep_tracks] # torch.array

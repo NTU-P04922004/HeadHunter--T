@@ -6,8 +6,8 @@ import itertools
 import h5py
 import colorsys
 from collections import Counter
-from scipy.misc import imread, imsave
-from skimage.io import imread as skimread
+# from scipy.misc import imread, imsave
+# from skimage.io import imread as skimread
 from skimage.transform import resize
 from skimage.measure import compare_ssim, compare_psnr
 import base64

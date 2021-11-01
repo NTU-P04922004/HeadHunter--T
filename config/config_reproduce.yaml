@@ -3,7 +3,7 @@
 DET:
     backbone: 'resnet50'
     det_cfg:
-        trained_model: './FT_R50_epoch_24.pth'
+        trained_model: '/content/NFL_R50_epoch_8.pth'
         pretrain_path: ''
         confidence_threshold: 0.1
         nms_threshold: 0.5
@@ -17,7 +17,7 @@ DET:
 
 TRACKER:
     inactive_patience: 25
-    im_shape: [1080, 1920]
+    im_shape: [720, 1280]
     n_particles: 100
     use_reid: True
     use_public: True
@@ -41,5 +41,5 @@ GEN:
 CAM:
     id: 0
     ip: 127.0.0.1
-    fps: 25
+    fps: 60
     switch_between: False

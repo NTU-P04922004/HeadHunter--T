@@ -9,6 +9,9 @@ import os
 import os.path as osp
 from glob import glob
 
+import sys
+sys.path.append("/content/HeadHunter")
+
 import numpy as np
 import yaml
 from matplotlib.pyplot import imread
@@ -101,9 +104,7 @@ for dset in datasets:
         assert len(mot_paths) == len(save_paths)
 
     all_results = []
-
-
-    for ind, mot_p in enumerate(tqdm(mot_paths)):
+    for ind, mot_p in enumerate(tqdm(mot_paths, ascii=True)):
         seqfile = osp.join(mot_p, 'seqinfo.ini')
         config = configparser.ConfigParser()
         config.read(seqfile)

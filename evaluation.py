@@ -8,6 +8,9 @@ import os
 from collections import defaultdict, OrderedDict
 from os import path as osp
 
+import sys
+sys.path.append("/content/py-motmetrics")
+
 import numpy as np
 import torch
 from cycler import cycler as cy
@@ -213,7 +216,6 @@ if __name__ == '__main__':
             gt_dir = osp.join(args.gt_dir, dset)
             pred_dir = osp.join(args.pred_dir, dset)
             mot_seq = sorted(os.listdir(gt_dir))
-
 
             seq_file = osp.join(gt_dir, 'seqinfo.ini')
             gt_file = osp.join(gt_dir, 'gt', 'gt.txt')
