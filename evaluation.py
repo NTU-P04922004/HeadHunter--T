@@ -118,7 +118,7 @@ def fetch_gt(config, gt_file):
 
     with open(gt_file, "r") as inf:
         reader = csv.reader(inf, delimiter=',')
-        for row in tqdm(reader):
+        for row in tqdm(reader, ascii=True):
             ignore = 0
             conf_cond = float(row[6]) > 0 and float(row[8]) > 0
             class_cond = int(float(row[7])) == 1
@@ -152,7 +152,7 @@ def fetch_predictions(config, pred_file):
         
     with open(pred_file, "r") as inf:
         reader = csv.reader(inf, delimiter=',')
-        for row in tqdm(reader):
+        for row in tqdm(reader, ascii=True, position=0):
             # class person, certainity 1, visibility >= 0.25
             # Make pixel indexes 0-based, should already be 0-based (or not)
             x1 = float(row[2])

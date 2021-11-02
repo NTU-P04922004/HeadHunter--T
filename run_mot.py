@@ -104,7 +104,7 @@ for dset in datasets:
         assert len(mot_paths) == len(save_paths)
 
     all_results = []
-    for ind, mot_p in enumerate(tqdm(mot_paths, ascii=True)):
+    for ind, mot_p in enumerate(tqdm(mot_paths, ascii=True, position=0, leave=False)):
         seqfile = osp.join(mot_p, 'seqinfo.ini')
         config = configparser.ConfigParser()
         config.read(seqfile)
@@ -136,7 +136,7 @@ for dset in datasets:
                         save_frames=args.save_frames, cam_motion=cam_motion,
                         public_detections=det_dict)
 
-        for im0 in tqdm(seq_images):
+        for im0 in tqdm(seq_images, ascii=True, position=0):
             cur_im = imread(im0)
             tracker.step(cur_im)
 
